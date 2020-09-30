@@ -2,7 +2,7 @@ from urllib.request import urlretrieve
 import sys
 import os
 
-#Variable section
+
 date = []
 pretty_version_date = [] 
 day_date = []
