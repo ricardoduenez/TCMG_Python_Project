@@ -151,7 +151,7 @@ print("July 1995 had ",julCount," requests.")
 print("August 1995 had ",augCount," requests.")
 print("September 1995 had ",sepCount," requests.")
 print("October 1995 had ",oct95Count," requests.\n")
-
+print("There were ",total_request," total requests.\n")
 print("What percent of the request did not work?\n",didnt_work_percent,"\n")
 print("What percent were redirected?\n",redirect,"\n")
 print("What is the most requested file?\n",most_request,"\n")
