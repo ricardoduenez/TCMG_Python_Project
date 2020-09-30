@@ -11,7 +11,7 @@ specific_month = {}
 Files = {}
 file_name = []
 
-#Request error info
+#Request's error info
 error_code = []
 didnt_work = 0
 redirected = 0
@@ -58,7 +58,8 @@ for row in amazon_file:
     individual_element = row.split(" ")       
     if(len(individual_element[3]) > 14):
         date.append(individual_element[3])#Getting the Dates  
-        
+    
+      
     if(len(individual_element)>8):
         error_code.append(individual_element[8])#Getting errors
         file_name.append(individual_element[6])#getting file names in one place
@@ -105,23 +106,17 @@ for row in amazon_file:
     if (individual_element[3][4:7] == "Oct" and individual_element[3][8:12] == "1995"):
         oct95.write(row)
         oct95Count += 1        
-        
-for dates in date:
-    pretty_version_date.append(dates[1:12])
-    day_date.append(dates[1:3])
-    
-for day in day_date:
-    if(day in specific_month):
-        specific_month[day] += 1
-    else:
-        specific_month[day] = 1
-        
+      
 for messUp in error_code:
     if (messUp[0] == "3"):
         redirected += 1
     elif (messUp[0] == "4"):
-        didnt_work += 1        
-
+        didnt_work += 1  
+            
+for dates in date:
+      pretty_version_date.append(dates[1:12])
+      day_date.append(dates[1:3])
+      
 redirect = (redirected / total_request) * 100
 didnt_work_percent = (didnt_work / total_request) * 100
 
